@@ -1,0 +1,3 @@
+".\Objects\fibonacci.obj" 
+TO ".\Objects\fibonacci" 
+PRINT(".\Listings\fibonacci.m51") RAMSIZE(256) 

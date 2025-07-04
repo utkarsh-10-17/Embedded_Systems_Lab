@@ -1,0 +1,57 @@
+A51 MACRO ASSEMBLER  ANI2MAT                                                              11/06/2024 14:21:30 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\ani2mat.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ani2mat.asm SET(SMALL) DEBUG PRINT(.\Listings\ani2mat.lst) OBJECT(.\Obj
+                      ects\ani2mat.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 753003            2     MOV 30H, #03H        ; Initialize memory location 30H with 3
+0003 753102            3     MOV 31H, #02H        ; Initialize memory location 31H with 2
+0006 753201            4     MOV 32H, #01H        ; Initialize memory location 32H with 1
+0009 753304            5     MOV 33H, #04H        ; Initialize memory location 33H with 4
+                       6     
+                       7     ; Multiply values at 30H and 33H
+000C E530              8     MOV A, 30H           ; Load value from 30H into A
+000E 8533F0            9     MOV B, 33H           ; Load value from 33H into B
+0011 A4               10     MUL AB               ; Multiply A and B, result in A (low byte) and B (high byte)
+0012 F540             11     MOV 40H, A           ; Store the low byte of the result at 40H
+0014 85F041           12     MOV 41H, B           ; Store the high byte of the result at 41H
+                      13     
+                      14     ; Multiply values at 31H and 32H
+0017 E531             15     MOV A, 31H           ; Load value from 31H into A
+0019 8532F0           16     MOV B, 32H           ; Load value from 32H into B
+001C A4               17     MUL AB               ; Multiply A and B, result in A (low byte) and B (high byte)
+001D F542             18     MOV 42H, A           ; Store the low byte of the result at 42H
+001F 85F043           19     MOV 43H, B           ; Store the high byte of the result at 43H
+                      20     
+                      21     ; Subtract the second product from the first product
+0022 E540             22     MOV A, 40H           ; Load the low byte of the first product into A
+0024 C3               23     CLR C                ; Clear the carry for subtraction
+0025 9542             24     SUBB A, 42H          ; Subtract the low byte of the second product from A
+0027 F544             25     MOV 44H, A           ; Store the result's low byte at 44H
+                      26     
+0029 E541             27     MOV A, 41H           ; Load the high byte of the first product into A
+002B 9543             28     SUBB A, 43H          ; Subtract the high byte of the second product from A (with borrow if 
+                             any)
+002D F545             29     MOV 45H, A           ; Store the result's high byte at 45H
+                      30     
+                      31     END                  ; End of program
+A51 MACRO ASSEMBLER  ANI2MAT                                                              11/06/2024 14:21:30 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

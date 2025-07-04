@@ -1,0 +1,46 @@
+A51 MACRO ASSEMBLER  ADD                                                                  09/04/2024 14:20:40 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\ADD.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ADD.ASM SET(SMALL) DEBUG PRINT(.\Listings\ADD.lst) OBJECT(.\Objects\ADD
+                      .obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+0000                   3     ORG 0000H
+0000 7904              4     MOV R1, #04
+0002 7F01              5     MOV R7,#01
+0004 120008            6     LCALL FACT
+0007 FF                7     MOV R7, A
+0008                   8     FACT:
+0008 EF                9     MOV A,R7
+0009 B90002           10     CJNE R1, #00,UP
+000C 8005             11     SJMP UP1
+000E                  12     UP:
+000E 89F0             13     MOV B,R1
+0010 A4               14     MUL AB
+0011 D9FB             15     DJNZ R1, UP
+0013                  16     UP1:
+0013 22               17     RET
+                      18     END
+A51 MACRO ASSEMBLER  ADD                                                                  09/04/2024 14:20:40 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+FACT . . . . . . .  C ADDR   0008H   A   
+UP . . . . . . . .  C ADDR   000EH   A   
+UP1. . . . . . . .  C ADDR   0013H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

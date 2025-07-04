@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\ani2mat.obj" 
+TO ".\Objects\ani2mat" 
+PRINT(".\Listings\ani2mat.m51") RAMSIZE(256) 

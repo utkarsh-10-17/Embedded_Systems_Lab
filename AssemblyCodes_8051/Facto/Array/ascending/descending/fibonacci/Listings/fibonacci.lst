@@ -1,0 +1,47 @@
+A51 MACRO ASSEMBLER  FIBONACCI                                                            09/11/2024 15:26:51 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\fibonacci.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE fibonacci.asm SET(SMALL) DEBUG PRINT(.\Listings\fibonacci.lst) OBJECT(.
+                      \Objects\fibonacci.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000 790A              1     MOV R1,#0AH
+0002 7A00              2     MOV R2,#00H
+0004 7400              3     MOV A,#00H
+0006 902000            4     MOV DPTR,#2000H
+0009 F0                5     MOVX @DPTR, A
+000A 04                6     INC A
+000B A3                7     INC DPTR
+000C F0                8     MOVX @DPTR, A
+000D 19                9     DEC R1
+000E 19               10     DEC R1
+000F A3               11     INC DPTR
+0010 7400             12     MOV A,#00H
+0012 75F001           13     MOV B,#01H
+0015 25F0             14     LOOP: ADD A,B  
+0017 FA               15               MOV R2,A  
+0018 F0               16               MOVX @DPTR, A
+0019 A3               17               INC DPTR
+001A E5F0             18               MOV A,B 
+001C 8AF0             19               MOV B,R2 
+001E D9F5             20               DJNZ R1,LOOP
+                      21     END
+A51 MACRO ASSEMBLER  FIBONACCI                                                            09/11/2024 15:26:51 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+LOOP . . . . . . .  C ADDR   0015H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

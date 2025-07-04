@@ -1,0 +1,48 @@
+A51 MACRO ASSEMBLER  ADDITION                                                             11/06/2024 14:02:09 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\addition.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE addition.asm SET(SMALL) DEBUG PRINT(.\Listings\addition.lst) OBJECT(.\O
+                      bjects\addition.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H 
+0000 753003            2     MOV 30H,#03H    
+0003 753102            3     MOV 31H,#02H    
+0006 753201            4     MOV 32H,#01H    
+0009 753304            5     MOV 33H,#04H    
+000C E530              6     MOV A,30H       
+000E 8533F0            7     MOV B,33H       
+0011 A4                8     MUL AB          
+0012 F540              9     MOV 40H,A       
+0014 85F041           10     MOV 41H,B       
+0017 E531             11     MOV A,31H       
+0019 8532F0           12     MOV B,32H       
+001C A4               13     MUL AB          
+001D F542             14     MOV 42H,A       
+001F 85F043           15     MOV 43H,B       
+0022 E540             16     MOV A,40H       
+0024 C3               17     CLR C           
+0025 9542             18     SUBB A,42H      
+0027 F544             19     MOV 44H,A       
+0029 E541             20     MOV A,41H       
+002B 9543             21     SUBB A,43H      
+002D F545             22     MOV 45H,A       
+                      23     END 
+A51 MACRO ASSEMBLER  ADDITION                                                             11/06/2024 14:02:09 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

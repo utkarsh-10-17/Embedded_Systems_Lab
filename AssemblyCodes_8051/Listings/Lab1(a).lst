@@ -1,0 +1,35 @@
+A51 MACRO ASSEMBLER  LAB1_A_                                                              08/21/2024 15:20:21 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Lab1(a).obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Lab1(a).asm SET(SMALL) DEBUG PRINT(.\Listings\Lab1(a).lst) OBJECT(.\Obj
+                      ects\Lab1(a).obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1         ORG 00H          ; Set the origin for code memory (start of the program)
+                       2     
+0000                   3        START:
+0000 753004            4         MOV 30H, #04H    ; Store the immediate value 04H in memory location 30H
+0003 753102            5         MOV 31H, #02H    ; Store the immediate value 02H in memory location 31H
+0006 E530              6         MOV A, 30H       ; Load the value from memory location 30H into A
+0008 2531              7         ADD A, 31H       ; Add the value from memory location 31H to A
+                       8          
+                       9     
+                      10         END              ; End of the program
+A51 MACRO ASSEMBLER  LAB1_A_                                                              08/21/2024 15:20:21 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+START. . . . . . .  C ADDR   0000H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,3 @@
+".\Objects\descending.obj" 
+TO ".\Objects\descending" 
+PRINT(".\Listings\descending.m51") RAMSIZE(256) 

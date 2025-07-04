@@ -1,0 +1,55 @@
+A51 MACRO ASSEMBLER  ARRAY                                                                09/04/2024 15:30:18 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Array.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Array.asm SET(SMALL) DEBUG PRINT(.\Listings\Array.lst) OBJECT(.\Objects
+                      \Array.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000                   2     ARRAY:               
+0000 01020304          3         DB 01H, 02H, 03H, 04H, 05H 
+0004 05                      
+0005 7800              4             MOV R0, #ARRAY
+0007 7A05              5             MOV R2, #05H
+0009 7400              6             MOV A, #00H
+000B 75F000            7             MOV B, #00H
+000E 7900              8             MOV R1, #00H
+                       9             
+0010                  10             UPPER_LOOP:
+0010 E6               11             MOV A, @R0
+0011 5401             12             ANL A, #01H
+0013 6004             13             JZ EVEN
+                      14             
+0015 05F0             15             INC B
+0017 8001             16             SJMP NEXT_ELEMENT
+                      17             
+0019                  18             EVEN: 
+0019 09               19                     INC R1
+                      20             
+001A                  21             NEXT_ELEMENT:
+001A 08               22                     INC R0
+001B DAF3             23                     DJNZ R2, UPPER_LOOP
+                      24     
+                      25     END
+A51 MACRO ASSEMBLER  ARRAY                                                                09/04/2024 15:30:18 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ARRAY. . . . . . .  C ADDR   0000H   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+EVEN . . . . . . .  C ADDR   0019H   A   
+NEXT_ELEMENT . . .  C ADDR   001AH   A   
+UPPER_LOOP . . . .  C ADDR   0010H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
