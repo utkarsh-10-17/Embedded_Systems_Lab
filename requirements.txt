@@ -1,0 +1,5 @@
+# requirements.txt
+
+Keil µVision5 IDE (https://www.keil.com/download/product/)
+(Optional) 8051 hardware trainer kit (if running on real hardware)
+(Optional) Proteus or similar simulator for circuit simulation
